@@ -1,0 +1,27 @@
+{
+  "name": "parkingapi",
+  "version": "1.0.0",
+  "description": "MLH Hackathon ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hackgtprovectus/parkingapi.git"
+  },
+  "keywords": [
+    "NodeJs"
+  ],
+  "author": "provectus",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hackgtprovectus/parkingapi.git"
+  },
+  "homepage": "https://github.com/dk67604/parkingapi#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "nodemon": "^1.12.1"
+  }
+}
