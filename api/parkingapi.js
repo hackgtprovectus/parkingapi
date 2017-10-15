@@ -35,7 +35,20 @@ var calculateParkingPopulationRate=function(result){
       var tempJSON=JSON.parse(temp);
       if((JSON.stringify(tempJSON.uniqueVehicleLeaving)!='0')&&(JSON.stringify(tempJSON.uniqueVehicleEntering)!='0'))
       var rate=parseInt(JSON.stringify(tempJSON.uniqueVehicleLeaving))/parseInt(JSON.stringify(tempJSON.uniqueVehicleEntering));
-      var parkingzone={coordinates:result[i].locations.coordinates,rate:rate};
+      var point=JSON.stringify(tempJSON.locations.coordinates);
+      var points=point.split(",");
+      var point1=points[0];
+      var point2=points[2];
+      var x1y1=point1.split(":");
+      var x3y3=point2.split(":");
+      var x1=parseFloat(x1y1[0].replace(/['"]+/g, ''));
+      var y1=parseFloat(x1y1[1]);
+      var x3=parseFloat(x3y3[0]);
+      var y3=parseFloat(x3y3[1]);
+      var latitude=(x1+x3)/2;
+      var longitude=(y1+y3)/2;
+
+      var parkingzone={latitude:latitude,longitude:longitude,rate:rate};
       finalDataList.push(parkingzone);
     }
     return new Promise(function(resolve,reject){
